@@ -1,38 +1,83 @@
+import { FaCalendarAlt } from "react-icons/fa";
+
 function ReleaseYearSlider({
-    releaseYear,
-    setReleaseYear
+  releaseYear,
+  setReleaseYear,
 }) {
+  return (
+    // Release year filter card
+    <div className="rounded-2xl border border-white/10 bg-slate-900/40 p-5 backdrop-blur-sm">
 
-    return (
+      {/* Filter title and selected year */}
+      <div className="mb-5 flex items-center justify-between">
 
-        <div className="bg-slate-700 rounded-xl p-4">
+        <div className="flex items-center gap-3">
 
-            <h3 className="text-white font-semibold mb-4">
-                📅 Released After
+          {/* Release year icon */}
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-sky-500 to-cyan-500 text-white shadow-lg shadow-sky-900/30">
+            <FaCalendarAlt />
+          </div>
+
+          {/* Filter heading */}
+          <div>
+
+            <h3 className="font-semibold text-white">
+              Released After
             </h3>
 
-            <input
-                type="range"
-                min="1990"
-                max="2025"
-                step="1"
-                value={releaseYear}
-                onChange={(e) => setReleaseYear(Number(e.target.value))}
-                className="w-full cursor-pointer"
-            />
-
-            <div className="mt-3 text-center text-violet-300 font-semibold">
-                {releaseYear}+
-            </div>
-
-            <p className="text-center text-slate-400 text-sm mt-2">
-                Games released in {releaseYear} or later
+            <p className="text-xs text-slate-400">
+              Discover modern games
             </p>
+
+          </div>
 
         </div>
 
-    );
+        {/* Display the selected release year */}
+        <div className="rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 px-4 py-2 text-sm font-bold text-white shadow-md">
+          {releaseYear}+
+        </div>
 
+      </div>
+
+      {/* Slider to choose the minimum release year */}
+      <input
+        type="range"
+        min="1990"
+        max="2025"
+        step="1"
+        value={releaseYear}
+        onChange={(e) => setReleaseYear(Number(e.target.value))}
+        className="
+          slider
+          h-2
+          w-full
+          cursor-pointer
+          appearance-none
+          rounded-full
+          bg-slate-700
+        "
+      />
+
+      {/* Minimum and maximum year labels */}
+      <div className="mt-3 flex justify-between text-xs font-medium text-slate-500">
+        <span>1990</span>
+        <span>2025</span>
+      </div>
+
+      {/* Short summary of the selected filter */}
+      <div className="mt-5 rounded-xl border border-sky-500/10 bg-sky-500/5 px-4 py-3">
+        <p className="text-center text-sm text-slate-300">
+          Showing games released in{" "}
+          <span className="font-semibold text-sky-300">
+            {releaseYear}
+          </span>{" "}
+          or later.
+        </p>
+      </div>
+
+    </div>
+  );
 }
 
 export default ReleaseYearSlider;
