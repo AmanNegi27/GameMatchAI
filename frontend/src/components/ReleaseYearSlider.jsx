@@ -6,7 +6,7 @@ function ReleaseYearSlider({
 }) {
   return (
     // Release year filter card
-    <div className="rounded-2xl border border-white/10 bg-slate-900/40 p-5 backdrop-blur-sm">
+    <div className="rounded-2xl border border-white/10 bg-slate-900/40 p-4 backdrop-blur-sm">
 
       {/* Filter title and selected year */}
       <div className="mb-5 flex items-center justify-between">
@@ -63,17 +63,6 @@ function ReleaseYearSlider({
       <div className="mt-3 flex justify-between text-xs font-medium text-slate-500">
         <span>1990</span>
         <span>2025</span>
-      </div>
-
-      {/* Short summary of the selected filter */}
-      <div className="mt-5 rounded-xl border border-sky-500/10 bg-sky-500/5 px-4 py-3">
-        <p className="text-center text-sm text-slate-300">
-          Showing games released in{" "}
-          <span className="font-semibold text-sky-300">
-            {releaseYear}
-          </span>{" "}
-          or later.
-        </p>
       </div>
 
     </div>

@@ -10,35 +10,24 @@ import PlaytimeSlider from "./PlaytimeSlider";
 import StoreFilter from "./StoreFilter";
 import SearchButton from "./SearchButton";
 
-/**
- * Displays the recommendation filters and sends the selected
- * preferences to the backend to fetch matching games.
- */
 function FilterPanel({
   setRecommendations,
   loading,
   setLoading,
 }) {
-  // Store the selected values for multi-select filters.
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [selectedPlatforms, setSelectedPlatforms] = useState([]);
   const [selectedTags, setSelectedTags] = useState([]);
   const [selectedStores, setSelectedStores] = useState([]);
 
-  // Store the values for slider-based filters.
   const [rating, setRating] = useState(4);
   const [releaseYear, setReleaseYear] = useState(2018);
   const [playtime, setPlaytime] = useState(20);
 
-  /**
-   * Sends the selected filters to the backend
-   * and updates the recommendation list.
-   */
   async function handleSearch() {
     setLoading(true);
 
     try {
-      // Build the request body expected by the recommendation API.
       const requestBody = {
         genres: selectedGenres,
         platforms: selectedPlatforms,
@@ -49,91 +38,126 @@ function FilterPanel({
         stores: selectedStores,
       };
 
-      console.log("Sending Request:", requestBody);
-
       const response = await api.post("/recommend", requestBody);
-
-      console.log("Recommendations:", response.data);
 
       setRecommendations(response.data);
     } catch (error) {
-      console.error("Recommendation Error:", error);
-
+      console.error(error);
       alert("Failed to fetch recommendations.");
     } finally {
-      // Reset the loading state regardless of the request result.
       setLoading(false);
     }
   }
 
   return (
-<div className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 shadow-[0_20px_60px_rgba(0,0,0,0.45)] backdrop-blur-xl">      {/* Decorative background glow. */}
-      <div className="absolute -top-24 left-1/2 h-48 w-48 -translate-x-1/2 rounded-full bg-violet-600/20 blur-3xl" />
+    <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 shadow-[0_20px_60px_rgba(0,0,0,.45)]">
 
-      <div className="relative p-7">
-        {/* Panel heading and description. */}
-        <div className="mb-8 border-b border-white/10 pb-6">
-          <div className="mb-3 inline-flex items-center rounded-full border border-violet-500/20 bg-violet-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-violet-300">
+      {/* Background Glow */}
+
+      <div className="absolute inset-0">
+
+        <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-violet-600/10 blur-[140px]" />
+
+      </div>
+
+      <div className="relative p-8 lg:p-10">
+
+        {/* Header */}
+
+        <div className="mb-10 border-b border-white/10 pb-8">
+
+          <div className="mb-3 inline-flex rounded-full border border-violet-500/20 bg-violet-500/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-violet-300">
+
             Recommendation Engine
+
           </div>
 
-          <h2 className="text-3xl font-bold tracking-tight text-white">
+          <h2 className="text-4xl font-bold text-white">
+
             Your Preferences
+
           </h2>
 
-          <p className="mt-3 text-sm leading-6 text-slate-400">
-            Customize your gaming profile by selecting genres, platforms,
-            ratings, release years, playtime, and stores to receive personalized
-            recommendations.
+          <p className="mt-3 max-w-4xl text-slate-400 leading-7">
+
+            Customize your gaming profile by selecting genres,
+            platforms, tags, ratings, release years,
+            playtime and stores to receive personalized
+            AI recommendations.
+
           </p>
+
         </div>
 
-        {/* Individual filter components. */}
-        <div className="space-y-7">
-          <GenreFilter
-            selectedGenres={selectedGenres}
-            setSelectedGenres={setSelectedGenres}
-          />
+        {/* FILTER AREA */}
 
-          <PlatformFilter
-            selectedPlatforms={selectedPlatforms}
-            setSelectedPlatforms={setSelectedPlatforms}
-          />
+        <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr]">
+                    {/* LEFT COLUMN */}
 
-          <TagFilter
-            selectedTags={selectedTags}
-            setSelectedTags={setSelectedTags}
-          />
+          <div className="space-y-16">
 
-          <RatingSlider
-            rating={rating}
-            setRating={setRating}
-          />
+            <GenreFilter
+              selectedGenres={selectedGenres}
+              setSelectedGenres={setSelectedGenres}
+            />
 
-          <ReleaseYearSlider
-            releaseYear={releaseYear}
-            setReleaseYear={setReleaseYear}
-          />
+            <PlatformFilter
+              selectedPlatforms={selectedPlatforms}
+              setSelectedPlatforms={setSelectedPlatforms}
+            />
 
-          <PlaytimeSlider
-            playtime={playtime}
-            setPlaytime={setPlaytime}
-          />
+            <TagFilter
+              selectedTags={selectedTags}
+              setSelectedTags={setSelectedTags}
+            />
 
-          <StoreFilter
-            selectedStores={selectedStores}
-            setSelectedStores={setSelectedStores}
-          />
+            <StoreFilter
+              selectedStores={selectedStores}
+              setSelectedStores={setSelectedStores}
+            />
 
-          <div className="pt-3">
+          </div>
+
+          {/* RIGHT COLUMN */}
+
+          <div className="flex flex-col gap-6">
+
+            <RatingSlider
+              rating={rating}
+              setRating={setRating}
+            />
+
+            <ReleaseYearSlider
+              releaseYear={releaseYear}
+              setReleaseYear={setReleaseYear}
+            />
+
+            <PlaytimeSlider
+              playtime={playtime}
+              setPlaytime={setPlaytime}
+            />
+
+          </div>
+
+        </div>
+
+        {/* SEARCH BUTTON */}
+
+        <div className="mt-10 border-t border-white/10 pt-8">
+
+          <div className="mx-auto max-w-md">
+
             <SearchButton
               onClick={handleSearch}
               loading={loading}
             />
+
           </div>
+
         </div>
-      </div>
-    </div>
+              </div>
+
+    </section>
   );
 }
 

@@ -230,3 +230,90 @@ body {
     0 0 50px rgba(139,92,246,.25);
 
 }
+
+   HERO CAROUSEL
+
+
+.hero-image{
+    border-radius:32px;
+    object-fit:cover;
+    user-select:none;
+    pointer-events:none;
+    opacity:.75;
+
+    filter:
+        brightness(.78)
+        saturate(1.2)
+        contrast(1.08);
+
+    animation:
+        heroFloat 7s ease-in-out infinite,
+        heroZoom 16s ease-in-out infinite alternate;
+
+    transition:
+        transform .8s ease,
+        opacity .8s ease,
+        filter .8s ease;
+}
+
+@keyframes heroFloat{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+@keyframes heroZoom{
+
+    from{
+        scale:1;
+    }
+
+    to{
+        scale:1.06;
+    }
+
+}
+
+.hero-carousel::before{
+
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    width:140px;
+    z-index:50;
+
+    background:linear-gradient(
+        to right,
+        #111827,
+        transparent
+    );
+}
+
+.hero-carousel::after{
+
+    content:"";
+    position:absolute;
+    right:0;
+    top:0;
+    bottom:0;
+    width:140px;
+    z-index:50;
+
+    background:linear-gradient(
+        to left,
+        #1A1333,
+        transparent
+    );
+}

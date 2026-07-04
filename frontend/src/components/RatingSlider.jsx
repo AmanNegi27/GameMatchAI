@@ -6,7 +6,7 @@ function RatingSlider({
 }) {
   return (
     // Rating filter card
-    <div className="rounded-2xl border border-white/10 bg-slate-900/40 p-5 backdrop-blur-sm">
+    <div className="rounded-2xl border border-white/10 bg-slate-900/40 p-4 backdrop-blur-sm">
 
       {/* Filter title and selected rating */}
       <div className="mb-5 flex items-center justify-between">
@@ -26,7 +26,7 @@ function RatingSlider({
             </h3>
 
             <p className="text-xs text-slate-400">
-              Show only highly rated games
+              Select the Mininum Rating
             </p>
 
           </div>
@@ -65,16 +65,7 @@ function RatingSlider({
         <span>5 ★</span>
       </div>
 
-      {/* Short summary of the selected filter */}
-      <div className="mt-5 rounded-xl border border-yellow-500/10 bg-yellow-500/5 px-4 py-3">
-        <p className="text-center text-sm text-slate-300">
-          Showing games rated{" "}
-          <span className="font-semibold text-yellow-300">
-            {rating}.0 stars
-          </span>{" "}
-          or higher.
-        </p>
-      </div>
+      
 
     </div>
   );

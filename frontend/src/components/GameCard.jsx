@@ -18,12 +18,12 @@ function GameCard({ game }) {
 
       {/* IMAGE */}
 
-      <div className="relative h-64 overflow-hidden">
+      <div className="relative h-80 overflow-hidden">
 
         <img
           src={game.background_image}
           alt={game.name}
-          className="h-full w-full object-cover object-center transition-all duration-700 group-hover:scale-110"
+          className="h-full w-full object-cover object-contain transition-all duration-700 group-hover:scale-110"
         />
 
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
@@ -50,7 +50,7 @@ function GameCard({ game }) {
 
       {/* CONTENT */}
 
-      <div className="p-5">
+      <div className="p-2">
 
         {/* TITLE */}
 

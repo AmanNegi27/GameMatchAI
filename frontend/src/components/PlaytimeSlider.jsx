@@ -6,7 +6,7 @@ function PlaytimeSlider({
 }) {
   return (
     // Playtime filter card
-    <div className="rounded-2xl border border-white/10 bg-slate-900/40 p-5 backdrop-blur-sm">
+    <div className="rounded-2xl border border-white/10 bg-slate-900/40 p-4 backdrop-blur-sm">
 
       {/* Filter title and current selected value */}
       <div className="mb-5 flex items-center justify-between">
