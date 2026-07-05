@@ -6,13 +6,10 @@ services:
     container_name: gamematchai_postgres
     restart: always
 
-    env_file:
-      - ./backend/.env
-
     environment:
       POSTGRES_DB: gamematch
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_PASSWORD: negs@2704
 
     ports:
       - "5432:5432"
@@ -35,8 +32,13 @@ services:
     depends_on:
       - postgres
 
-    env_file:
-      - ./backend/.env
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: gamematch
+      DB_USER: postgres
+      DB_PASSWORD: negs@2704
+      RAWG_API_KEY: 2212120717754e13b480a7bb4734e927
 
     ports:
       - "8000:8000"
