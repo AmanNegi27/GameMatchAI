@@ -38,7 +38,6 @@ services:
       DB_NAME: gamematch
       DB_USER: postgres
       DB_PASSWORD: negs@2704
-      RAWG_API_KEY: 2212120717754e13b480a7bb4734e927
 
     ports:
       - "8000:8000"
