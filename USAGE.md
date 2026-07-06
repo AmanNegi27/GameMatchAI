@@ -106,7 +106,7 @@ The **Released After** slider allows users to specify the earliest release year 
 
 The **Maximum Playtime** slider allows users to define the maximum estimated completion time for a game. This enables users to find games that fit their available time, whether they prefer shorter experiences or longer adventures.
 
-![alt text](<images/Sliders.png>)
+![alt text](<images/sliders.png>)
 
 ### Generate Recommendations
 ![alt text](images/search.png)
