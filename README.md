@@ -25,31 +25,31 @@ The following are some features that differentiate this project:
 
 ### 1. Personalized recommendations
 
-    Instead of recommending same bunch of popular games to everyone, GameMatch AI provides individualized recommendations based on various preferences such as genres, platforms, tags, rating, release year, playtime, stores selected by the user. This ensure that different users get different recommendations even when some of their selections are same.
+Instead of recommending same bunch of popular games to everyone, GameMatch AI provides individualized recommendations based on various preferences such as genres, platforms, tags, rating, release year, playtime, stores selected by the user. This ensure that different users get different recommendations even when some of their selections are same.
 
 ### 2. Simple and user-friendly interface
-
-    Majority of recommendation platforms prompt users to answer several pages of questionnaires or work with a very complex interface before giving any recommendations. However, GameMatch AI reduces complexity to a great extent, letting user select only preferences they care about and see the results in seconds.
+Majority of recommendation platforms prompt users to answer several pages of questionnaires or work with a very complex interface before giving any recommendations. However, GameMatch AI reduces complexity to a great extent, letting user select only preferences they care about and see the results in seconds.
 
 ### 3. Transparent recommendation algorithm
 
-    GameMatch AI uses its custom weighted scoring based on the user's preferences and their predefined weights. So unlike black-box recommendation algorithms, you can clearly understand why a particular recommendation is being suggested to you.
+GameMatch AI uses its custom weighted scoring based on the user's preferences and their predefined weights. So unlike black-box recommendation algorithms, you can clearly understand why a particular recommendation is being suggested to you.
 
 ### 4. Free from external APIs during runtime
 
-    While the game information is extracted and transformed using the RAWG API using ETL process initially, the application works fully based on the local PostgreSQL database, which helps in removing dependencies on the external sources, avoiding rate limits and delivering recommendations very fast.
+While the game information is extracted and transformed using the RAWG API using ETL process initially, the application works fully based on the local PostgreSQL database, which helps in removing dependencies on the external sources, avoiding rate limits and delivering recommendations very fast.
 
 ### 5. End-to-end Full-Stack Software Engineering Project
 
-    This is not a project with just a front-end or back-end APIs but a full-stack implementation of a web application starting from data collection (ETL), storing data into a database, creating a RESTful API using FastAPI and finally building a client-side interface using React and deploying it using Docker.
+This is not a project with just a front-end or back-end APIs but a full-stack implementation of a web application starting from data collection (ETL), storing data into a database, creating a RESTful API using FastAPI and finally building a client-side interface using React and deploying it using Docker.
 
 ### 6. Modular and scalable architecture
 
-    The project follows modular architecture design with separate components for ETL process, database, backend services, APIs, and front-end. This improves maintainability and makes it easy to scale the application in future to include more functionalities.
+The project follows modular architecture design with separate components for ETL process, database, backend services, APIs, and front-end. This improves maintainability and makes it easy to scale the application in future to include more functionalities.
 
 ### 7. Real-world Engineering practices
 
-    The project implements the standard software engineering practices, such as database normalization, reusable React components, service based backend architecture, deployment using Docker, environment variables handling, version control with Git and much more.
+The project implements the standard software engineering practices, such as database normalization, reusable React components, service based backend architecture, deployment using Docker, environment variables handling, version control with Git and much more.
+
 ---
 ## Key Features
 
@@ -327,6 +327,12 @@ game_genres  game_platforms  game_tags  game_stores  screenshots
 ```
 
 ### Database Tables
+
+The GameMatch AI database contains **11,960 video games** collected from the **RAWG Video Games Database API** through the ETL pipeline. During the transformation process, the data is cleaned, normalized, and organized into multiple relational tables to eliminate redundancy and improve query performance.
+
+In addition to basic game information such as titles, ratings, release dates, and playtime, the database stores genres, platforms, gameplay tags, digital stores, screenshots, and the relationships between them. This structured design enables the recommendation engine to efficiently retrieve and compare game metadata when generating personalized recommendations.
+
+The following tables make up the GameMatch AI database.
 
 | Table | Purpose |
 |--------|---------|
@@ -751,6 +757,37 @@ React Frontend
 ```
 
 > **Note:** The RAWG API is only used during the ETL process to populate the PostgreSQL database. During normal application runtime, all recommendations are generated using the locally stored PostgreSQL data, so no external API calls are required.
+
+
+## Data Source
+
+The game dataset used in this project was collected from the **RAWG Video Games Database API**.
+
+The API was used during the ETL (Extract, Transform, Load) process to retrieve publicly available video game information, including game titles, genres, platforms, tags, stores, ratings, release dates, playtime, and screenshots.
+
+The extracted data was then cleaned, transformed, and loaded into a local PostgreSQL database. During normal application usage, all recommendations are generated from the local database, and no external API calls are made.
+
+**Source:** https://rawg.io/apidocs
+
+## Acknowledgements
+
+This project uses publicly available game data provided by the **RAWG Video Games Database API** for educational purposes.
+
+Special thanks to the RAWG team for providing a comprehensive video game database and API that made this project possible.
+
+## AI Assistance Declaration
+
+Artificial Intelligence tools (ChatGPT) were used as a development assistant during this project.
+
+AI assistance was primarily used for:
+
+- Discussing software architecture and project structure.
+- Exploring different recommendation system approaches before implementing the final weighted scoring algorithm.
+- Debugging programming issues and understanding error messages.
+- Explaining programming concepts and suggesting possible solutions.
+- Improving code readability, comments, docstrings, and project documentation.
+
+All implementation decisions, project integration, testing, customization, and final modifications were completed by the project author. The recommendation logic, database design, ETL pipeline integration, frontend customization, and overall system behavior were reviewed, modified, and validated throughout the development process.
 
 ##  Additional Documentation
 
