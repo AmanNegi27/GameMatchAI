@@ -14,7 +14,6 @@ This guide explains how to:
 - Open the GameMatch AI website.
 - Select game preferences.
 - Generate personalized recommendations.
-- Understand the recommendation score.
 - Interpret the recommendation cards.
 - Stop the application safely.
 
@@ -137,3 +136,15 @@ Each recommendation card includes:
 ![alt text](images/gamecard2.png)
 
 ![alt text](images/gamecard3.png)
+
+## Stopping the Application
+![alt text](images/stop.png)
+
+To stop the application when using **Docker Desktop**:
+
+1. Open **Docker Desktop**.
+2. Navigate to the **Containers** section.
+3. Locate the **gamematchai** container group.
+4. Click the **Stop** button to stop all running services.
+
+> **Note:** Stopping the container group will stop the frontend, backend, and PostgreSQL services simultaneously.
