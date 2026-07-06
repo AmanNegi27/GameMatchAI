@@ -18,12 +18,21 @@ This guide explains how to:
 - Interpret the recommendation cards.
 - Stop the application safely.
 
-![alt text](start.png)
+## Starting the Application (Docker Desktop)
+
+1. Open **Docker Desktop**.
+2. Navigate to the **Containers** section.
+3. Locate the **gamematchai** container group and ensure all services are running.
+4. Click on **frontend (5173:5173)** to open the GameMatch AI application in your default web browser.
+
+> **Note:** The frontend is accessible at **http://localhost:5173**. The backend and PostgreSQL containers run automatically in the background and do not need to be opened manually.
+
+![alt text](images/container.png)   ![alt text](images/start.png)
 
 ## Application Interface
 
 After starting the application, the GameMatch AI homepage will open in your web browser.
-![alt text](<interface.png>)
+![alt text](<images/interface.png>)
 
 The interface is designed to be simple, modern, and easy to use. It is divided into three main sections:
 
@@ -36,7 +45,7 @@ The top section introduces the application and briefly explains its purpose. It 
 ### 2. Preference Selection Panel
 
 This is the main area where users customize their game preferences before generating recommendations.
-![alt text](preferences.png)
+![alt text](images/preferences.png)
 Users can select:
 
 - **Genres** – Choose one or more game genres (e.g., Action, Adventure, RPG).
@@ -62,22 +71,22 @@ The highest-scoring games are then returned and displayed as personalized recomm
 > **Note:** Users do not need to fill every filter. Recommendations can be generated using as few or as many preferences as desired.
 
 ### Genre Selection
-![alt text](<genres.png>)
+![alt text](<images/genres.png>)
 
 The **Genres** filter allows users to select one or more game genres based on their interests. Selecting multiple genres helps the recommendation engine identify games that best match the user's preferred gameplay style.
 
 ### Platform Selection
-![alt text](<platforms.png>)
+![alt text](<images/platforms.png>)
 
 The **Platforms** filter allows users to choose one or more gaming platforms on which they want to play. This ensures that only games available on the selected platforms are prioritized in the recommendations.
 
 ### Tag Selection
-![alt text](<tags.png>)
+![alt text](<images/tags.png>)
 
 The **Tags** filter allows users to select gameplay characteristics such as **Open World**, **Singleplayer**, or **Story Rich**. A search bar is also provided to quickly find specific tags, making it easier to personalize game recommendations.
 
 ### Store Selection
-![alt text](<stores.png>)
+![alt text](<images/stores.png>)
 
 The **Stores** filter allows users to select one or more digital game stores, such as **Steam**, **PlayStation Store**, or **Xbox Store**. This helps prioritize games that are available on the user's preferred platforms for purchase or download.
 
@@ -97,17 +106,17 @@ The **Released After** slider allows users to specify the earliest release year 
 
 The **Maximum Playtime** slider allows users to define the maximum estimated completion time for a game. This enables users to find games that fit their available time, whether they prefer shorter experiences or longer adventures.
 
-![alt text](<Sliders.png>)
+![alt text](<images/Sliders.png>)
 
 ### Generate Recommendations
-![alt text](search.png)
+![alt text](images/search.png)
 
 After selecting the desired preferences, click the **Find My Next Game** button to generate personalized game recommendations.
 
 The recommendation engine processes the selected filters, calculates a match score for every eligible game, and displays the highest-ranked results in the **Recommended Games** section. If no preferences have been selected yet, the application displays a placeholder message prompting the user to choose their preferences before generating recommendations.
 
 ### Viewing Recommendation Results
-![alt text](gamecard1.png)
+![alt text](images/gamecard1.png)
 
 After the recommendation process is complete, the **Recommended Games** section displays the 20 highest-ranked games based on the selected preferences.
 
@@ -125,6 +134,6 @@ Each recommendation card includes:
 - **Matched On** – Highlights the specific user preferences that contributed to the recommendation score.
 
 
-![alt text](gamecard2.png)
+![alt text](images/gamecard2.png)
 
-![alt text](gamecard3.png)
+![alt text](images/gamecard3.png)
