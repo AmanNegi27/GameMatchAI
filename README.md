@@ -758,6 +758,38 @@ React Frontend
 
 > **Note:** The RAWG API is only used during the ETL process to populate the PostgreSQL database. During normal application runtime, all recommendations are generated using the locally stored PostgreSQL data, so no external API calls are required.
 
+# Future Scope
+
+Although GameMatch AI provides personalized recommendations using a weighted scoring algorithm, there are several ways the project can be improved in the future.
+
+- **Machine Learning-Based Recommendations**  
+  Replace or enhance the current scoring algorithm with a machine learning model that learns from user behavior and provides more personalized recommendations over time.
+
+- **Similar Game Search**  
+  Allow users to enter the name of a game and receive recommendations for similar games based on genres, gameplay, tags, ratings, and other features.
+
+- **Larger Game Database**  
+  Expand the database by importing more games from the RAWG API to provide a wider variety of recommendations.
+
+- **Store Links**  
+  Add direct links to digital stores such as Steam, PlayStation Store, Xbox Store, and Epic Games Store so users can easily access the recommended games.
+
+- **Game Prices**  
+  Display the latest prices and discounts available on different digital stores to help users compare purchase options.
+
+- **More Game Information**  
+  Include additional details such as trailers, screenshots, game descriptions, system requirements, developers, publishers, and user reviews.
+
+- **User Accounts and Favorites**  
+  Allow users to create accounts, save favorite games, and maintain a recommendation history.
+
+- **Advanced Search and Filters**  
+  Introduce additional filters such as multiplayer support, ESRB rating, game engine, developer, publisher, and supported languages.
+
+- **Performance Improvements**  
+  Optimize the recommendation engine and database queries to improve response time as the dataset continues to grow.
+- **Enhanced User Interface and User Experience (UI/UX)**  
+  Improve the overall user interface by adding more animations, smoother transitions, better navigation, additional themes, and interactive features to make the application more attractive and user-friendly.
 
 ## Data Source
 
