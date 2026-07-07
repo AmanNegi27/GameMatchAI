@@ -525,7 +525,7 @@ A candidate game has the following attributes:
 | **Genre** | The user selected **4 genres**, and the game matches **2** of them (**Action** and **RPG**). | (2 ÷ 4) × 35 | 17.5 |
 | **Platform** | The user selected **2 platforms**, and the game matches **1** (**PC**). | (1 ÷ 2) × 25 | 12.5 |
 | **Tags** | The user selected **4 tags**, and the game matches **2** (**Open World** and **Fantasy**). | (2 ÷ 4) × 20 | 10 |
-| **Rating** | The game's rating (**4.5**) is greater than the user's minimum rating (**4.2**). | Full Score | 5 |
+| **Rating** | The game's rating (**4.5**) is greater than the user's minimum rating (**4**). | Full Score | 5 |
 | **Release Year** | The game was released in **2022**, which satisfies the minimum release year (**2020**). | Full Score | 5 |
 | **Playtime** | The game's playtime (**30 hours**) is within the user's preferred maximum (**40 hours**). | Full Score | 3 |
 | **Store** | The game is available on the user's preferred store (**Steam**). | Full Score | 7 |
