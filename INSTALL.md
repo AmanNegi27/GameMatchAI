@@ -26,6 +26,7 @@ Install Git if it is not already available on your system.
 | **Git** | https://git-scm.com/downloads |
 
 Clone the repository:
+*Open Command Prompt, PowerShell, or Terminal and run:*
 
 ```bash
 git clone https://github.com/AmanNegi27/GameMatchAI.git
