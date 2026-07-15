@@ -72,26 +72,6 @@ print(f"Games Downloaded      : {len(results)}")
 
 print("\nDownloaded Games\n")
 
-for index, game in enumerate(results, start=1):
-
-    print("-" * 60)
-
-    print(f"{index}. {game.get('name')}")
-    print(f"Released     : {game.get('released')}")
-    print(f"Rating       : {game.get('rating')}")
-    print(f"Metacritic   : {game.get('metacritic')}")
-    print(f"Playtime     : {game.get('playtime')}")
-
-    genres = [genre["name"] for genre in game.get("genres", [])]
-    print(f"Genres       : {', '.join(genres)}")
-
-    platforms = [
-        platform["platform"]["name"]
-        for platform in game.get("parent_platforms", [])
-    ]
-    print(f"Platforms    : {', '.join(platforms)}")
-
-
 print("\nRaw JSON saved to:")
 print(output_file)
 

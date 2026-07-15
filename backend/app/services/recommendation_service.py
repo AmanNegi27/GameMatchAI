@@ -355,5 +355,5 @@ def recommend_games(request):
 
     )
 
-    # Return only the top 10 recommendations.
+    # Return only the top 20 recommendations.
     return recommendations[:20]

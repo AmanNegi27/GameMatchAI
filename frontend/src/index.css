@@ -1,7 +1,4 @@
 @import "tailwindcss";
-
-/* Global styles */
-
 html {
   /* Enable smooth scrolling throughout the page */
   scroll-behavior: smooth;
@@ -15,7 +12,6 @@ body {
   /* Prevent unwanted horizontal scrolling */
   overflow-x: hidden;
 }
-
 /* Custom scrollbar */
 
 ::-webkit-scrollbar {

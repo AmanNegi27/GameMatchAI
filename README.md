@@ -2,7 +2,28 @@
 
 A video game recommendation engine to help users find games according to their preferences through a specially designed weighted recommendation algorithm. The project serves as an illustration of full-stack software engineering by incorporating elements of data engineering, backend API engineering, databases, frontend engineering, and containerization.
 
+## Table of Contents
 
+- [Introduction](#introduction-of-project)
+- [Why I Chose This Project](#why-i-chose-this-project)
+- [What Makes This Project Special?](#what-makes-this-project-special)
+- [Key Features](#key-features)
+- [Technology Stack](#technology-stack)
+- [System Architecture](#system-architecture)
+- [Project Structure](#project-structure)
+- [ETL Pipeline](#etl-pipeline)
+- [Database Design](#database-design)
+- [API Endpoints](#api-endpoints)
+- [Recommendation Engine](#recommendation-engine)
+- [Match Score Calculation](#match-score-calculation)
+- [Frontend Architecture](#frontend-architecture)
+- [Docker Architecture](#docker-architecture)
+- [Future Scope](#future-scope)
+- [Data Source](#data-source)
+- [Acknowledgements](#acknowledgements)
+- [AI Assistance Declaration](#ai-assistance-declaration)
+- [Additional Documentation](#additional-documentation)
+- [Cross-Platform Testing](#cross-platform-testing)
 ## Introduction of Project
 
 GameMatch AI is a full stack web application that recommends video games according to preferences such as genre, platform, tags, store, rating, release year, and average playtime of the user. As opposed to returning a straightforward list of games, this application takes into account multiple criteria chosen by the user via a weighted recommendation algorithm.
@@ -328,7 +349,7 @@ game_genres  game_platforms  game_tags  game_stores  screenshots
 
 ### Database Tables
 
-The GameMatch AI database contains **11,960 video games** collected from the **RAWG Video Games Database API** through the ETL pipeline. During the transformation process, the data is cleaned, normalized, and organized into multiple relational tables to eliminate redundancy and improve query performance.
+The GameMatch AI database contains **15,680 video games** collected from the **RAWG Video Games Database API** through the ETL pipeline. During the transformation process, the data is cleaned, normalized, and organized into multiple relational tables to eliminate redundancy and improve query performance.
 
 In addition to basic game information such as titles, ratings, release dates, and playtime, the database stores genres, platforms, gameplay tags, digital stores, screenshots, and the relationships between them. This structured design enables the recommendation engine to efficiently retrieve and compare game metadata when generating personalized recommendations.
 
@@ -829,3 +850,14 @@ To keep this README concise and focused on the project's architecture and implem
 -  **USAGE.md** – Instructions on using the application, accessing the API documentation, and generating personalized game recommendations.
 
 Please refer to these documents for detailed setup and usage information.
+
+## Cross-Platform Testing
+
+GameMatch AI has been tested on multiple operating systems to verify that the Dockerized application runs successfully in different environments.
+
+| Operating System | Status |
+|------------------|--------|
+| Windows 10/11 | ✅ Tested |
+| macOS | ✅ Tested |
+
+During testing, a compatibility issue was identified with the `node:22-alpine` Docker image on macOS. The frontend Docker image was updated to `node:22-slim`, and the application was successfully built and executed on both Windows and macOS using Docker Compose.

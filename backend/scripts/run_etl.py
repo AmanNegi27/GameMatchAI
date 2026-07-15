@@ -14,9 +14,9 @@ from pathlib import Path
 
 
 # Configure the range of RAWG pages to import.
-START_PAGE = 270
-END_PAGE = 300
-#There are Total of 11960 games imported to the postgres database till 300th page of RAWG API.
+START_PAGE = 301
+END_PAGE = 400
+#There are Total of 15680 games imported to the postgres database till 300th page of RAWG API.
 
 # Project directories.
 PROJECT_ROOT = Path(__file__).resolve().parents[2]

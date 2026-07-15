@@ -26,11 +26,9 @@ function Header() {
 
             {/* Badge */}
 
-            <div className="mb-4 inline-flex items-center rounded-full border border-violet-500/20 bg-violet-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-violet-300">
-
-              AI Powered Game Discovery
-
-            </div>
+            <div className="font-heading mb-4 inline-flex items-center rounded-full border border-violet-500/20 bg-violet-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-violet-300">
+  AI Powered Game Discovery
+</div>
 
             <div className="flex items-center gap-5">
 
@@ -46,7 +44,7 @@ function Header() {
 
               <div>
 
-                <h1 className="text-5xl font-extrabold tracking-tight text-white">
+                <h1 className="font-logo text-5xl font-extrabold tracking-tight text-white">
 
                   GameMatch{" "}
 
