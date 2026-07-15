@@ -81,3 +81,30 @@ To stop all running containers:
 ```bash
 docker compose down
 ```
+
+## Troubleshooting
+
+If you encounter any issues while running the project, try the following:
+
+- Ensure that **Docker Desktop** is running before executing any Docker commands.
+- Verify that you are inside the project directory (`GameMatchAI`) before running `docker compose up --build`.
+- If the containers fail to start, restart Docker Desktop and try again.
+- If Docker images fail to download, check your internet connection and run the command again.
+- If ports **5173**, **8000**, or **5432** are already in use, stop the conflicting application or container and restart the project.
+- If you have made changes to the project, rebuild the containers using:
+
+```bash
+docker compose up --build
+```
+
+- To stop all running containers:
+
+```bash
+docker compose down
+```
+
+- To start the application again after stopping it:
+
+```bash
+docker compose up
+```
