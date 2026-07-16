@@ -250,8 +250,7 @@ GameMatchAI/
 │   │   ├── pages/
 │   │   │   └── Home.jsx
 │   │   │
-│   │   ├── styles/
-│   │   │   └── global.css
+│   │   |
 │   │   │
 │   │   ├── App.jsx
 │   │   ├── main.jsx
@@ -592,7 +591,6 @@ The frontend is built using **React** and follows a **component-based architectu
 | **RecommendationList.jsx** | Receives the recommendation results from the backend and displays the list of recommended games. |
 | **GameCard.jsx** | Displays detailed information for each recommended game, including cover image, rating, release year, genres, platforms, tags, stores, recommendation score, and matched preferences. |
 | **api.js** | Contains all Axios functions responsible for communication between the React frontend and the FastAPI backend. |
-| **global.css** | Defines application-specific styling shared across the React components, including layouts and reusable UI styles. |
 | **index.css** | Contains global styles such as the application theme, custom scrollbar, slider styling, game card animations, hover effects, and hero carousel animations, ensuring a consistent look and feel throughout the application.|
 | **App.css** | Default Vite stylesheet. It was retained for project compatibility but is not used for the application's custom user interface.|
 | **index.html** | The main HTML entry file of the application. sets the page title, favicon, and viewport configuration, and loads the main.jsx entry point.|
